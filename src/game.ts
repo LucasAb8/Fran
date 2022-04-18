@@ -216,8 +216,7 @@ export class RotatorSystem {
   //VIDEO==================================================================================
   
   const myVideoClip = new VideoClip(
-    "videos/video.mp4"
-  )
+    "https://ipfs.io/ipfs/bafybeifffz6ejfpkfddfc2h6k23xflntanw4vhdjcyoldu5xsdrsntdzbq/video.mp4")
   
   
   const myVideoTexture = new VideoTexture(myVideoClip)
