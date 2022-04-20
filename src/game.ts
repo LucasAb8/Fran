@@ -9,6 +9,27 @@ building.addComponent(
 
 engine.addEntity(building)
 
+const eye = new Entity()
+eye.addComponent(new GLTFShape("models/ojo.glb"))
+eye.addComponent(
+  new Transform({
+    position: new Vector3(8, 0, 8),
+    scale: new Vector3(1, 1, 1),
+  })
+)
+
+engine.addEntity(eye)
+
+const eye2 = new Entity()
+eye2.addComponent(new GLTFShape("models/ojo.glb"))
+eye2.addComponent(
+  new Transform({
+    position: new Vector3(8, -0.5, 8),
+    scale: new Vector3(0.9, 1, 0.9),
+  })
+)
+
+engine.addEntity(eye2)
 
 
 
@@ -224,9 +245,12 @@ export class RotatorSystem {
   
   const myMaterial = new Material()
   myMaterial.albedoTexture = myVideoTexture
-  myMaterial.roughness = 1
-  myMaterial.specularIntensity = 0
-  myMaterial.metallic = 0
+myMaterial.roughness = 1.0
+myMaterial.specularIntensity = 0
+myMaterial.metallic = 0
+myMaterial.emissiveTexture = myVideoTexture
+myMaterial.emissiveColor = Color3.White()
+myMaterial.emissiveIntensity = 0.6
   
   
   
@@ -234,7 +258,7 @@ export class RotatorSystem {
   screen.addComponent(new PlaneShape())
   screen.addComponent(
     new Transform({
-      position: new Vector3(8, 11.5, 1.3),
+      position: new Vector3(8.5, 11.5, 1.3),
       scale: new Vector3(8,4.5,1)
     })
   )
